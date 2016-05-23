@@ -1,0 +1,7 @@
+[package]
+name = "shuffle_files"
+version = "0.1.0"
+authors = ["Nikolay Diachkov <ypypy28@yandex.ru>"]
+
+[dependencies]
+rand = "0.3.14"
