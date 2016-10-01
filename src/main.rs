@@ -47,7 +47,11 @@ fn rename(files: Vec<fs::DirEntry>) -> u32 {
     let mut count: u32 = 0;
     for file in files {
         let num = random_u32(0, 999);
-        fs::rename(file.file_name(), format!("{}_{}", num, file.file_name().to_string_lossy()));
+        let ren = fs::rename(file.file_name(), format!("{}_{}", num, file.file_name().to_string_lossy()));
+        match ren {
+            Ok(_) => count +=1,
+            Err(..) => {}
+        };
         count += 1;
     }
     count
